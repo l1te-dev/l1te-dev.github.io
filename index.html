@@ -1,7 +1,252 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>l1te-dev games</title><style>body{font:16px/1.6 -apple-system,system-ui,sans-serif;max-width:680px;margin:2rem auto;padding:0 1rem;color:#222}a{color:#0a66c2}@media(prefers-color-scheme:dark){body{background:#111;color:#eee}a{color:#6cb4ff}}</style></head><body><h1>l1te-dev games</h1>
-<ul>
-<li><a href="mayorofages-site/">Mayor of Ages</a> · <a href="mayorofages-site/privacy.html">privacy</a> · <a href="mayorofages-site/choices.html">ad privacy choices</a></li>
-<li><a href="reflectblocks-site/">Reflect Blocks</a></li>
-<li><a href="datacenterempire-site/">Datacenter Empire</a> · <a href="datacenterempire-site/privacy.html">privacy</a> · <a href="datacenterempire-site/choices.html">ad privacy choices</a></li>
-</ul>
-<p>Contact: <a href="mailto:cadpack.support@gmail.com">cadpack.support@gmail.com</a></p></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>l1tedev studios</title>
+<meta name="description" content="l1tedev studios is an independent game studio making puzzles, tycoons and strategy games.">
+<meta property="og:title" content="l1tedev studios">
+<meta property="og:description" content="Independent games with a twist.">
+<meta property="og:image" content="https://l1te-dev.github.io/assets/og-banner.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0b0b0f">
+<link rel="icon" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0b0b0f; --ink-2:#121218; --line:#26242f; --paper:#f4f1ea; --muted:#8a8794; --dim:#5d5a68;
+  --accent:#ff5b2e; --violet:#7c5cff; --magenta:#ff3d8a; --cyan:#36d6ff;
+  --radius:18px; --max:1120px;
+  --font:-apple-system,BlinkMacSystemFont,"SF Pro Display",Inter,system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--paper);font:16px/1.6 var(--font);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.pixel{display:inline-block;width:.17em;height:.17em;background:var(--accent);border-radius:.03em;margin-left:.045em}
+
+/* nav */
+nav{position:fixed;inset:0 0 auto;z-index:20;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:rgba(11,11,15,.6);border-bottom:1px solid rgba(255,255,255,.05)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:19px}
+.brand img{width:30px;height:30px;border-radius:50%}
+.brand .pixel{align-self:flex-end;margin:0 0 7px -8px;width:6px;height:6px;border-radius:1.5px}
+nav ul{display:flex;gap:26px;list-style:none;padding:0;font-size:14px;color:var(--muted);font-weight:500}
+nav ul a:hover{color:var(--paper)}
+
+/* hero */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;padding:120px 0 80px}
+.hero::before{content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(40% 55% at 88% 10%,rgba(124,92,255,.55),transparent 70%),
+    radial-gradient(35% 45% at 70% 60%,rgba(255,61,138,.32),transparent 70%),
+    radial-gradient(40% 45% at 98% 98%,rgba(54,214,255,.40),transparent 70%),
+    radial-gradient(25% 30% at 58% 8%,rgba(255,91,46,.18),transparent 70%);}
+.hero::after{content:"";position:absolute;inset:0;opacity:.35;
+  background-image:radial-gradient(rgba(244,241,234,.18) 1px,transparent 1.2px);background-size:22px 22px;
+  -webkit-mask-image:radial-gradient(70% 80% at 60% 50%,#000,transparent);mask-image:radial-gradient(70% 80% at 60% 50%,#000,transparent)}
+#pixels{position:absolute;inset:0;width:100%;height:100%;z-index:1}
+.hero .wrap{position:relative;z-index:2;width:100%;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.wordmark{font-weight:800;letter-spacing:-.045em;line-height:.9;font-size:clamp(64px,10vw,140px)}
+.studios{display:flex;align-items:center;gap:18px;margin-top:22px;color:var(--muted);font-weight:600;letter-spacing:.5em;font-size:clamp(13px,1.5vw,18px)}
+.studios::after{content:"";height:1px;width:120px;background:linear-gradient(90deg,#4a4458,transparent)}
+.tag{margin-top:26px;max-width:460px;color:#c9c5d3;font-size:clamp(17px,1.6vw,20px)}
+.cta{display:flex;gap:12px;margin-top:34px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:999px;font-weight:600;font-size:15px;transition:transform .15s,background .2s}
+.btn:hover{transform:translateY(-1px)}
+.btn.primary{background:var(--paper);color:var(--ink)}
+.btn.ghost{border:1px solid #3a3646;color:var(--paper);background:rgba(255,255,255,.03)}
+.badge{justify-self:center;width:min(420px,80vw);aspect-ratio:1}
+.badge svg{width:100%;height:100%;overflow:visible}
+.spin{transform-origin:200px 200px;animation:spin 60s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.spin{animation:none}}
+
+/* sections */
+section{padding:110px 0}
+.eyebrow{color:var(--accent);font-weight:700;letter-spacing:.3em;font-size:12px;text-transform:uppercase}
+h2{font-size:clamp(34px,4.6vw,54px);letter-spacing:-.035em;line-height:1.05;margin-top:12px;font-weight:800}
+.lead{color:var(--muted);max-width:560px;margin-top:14px;font-size:18px}
+
+/* work */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px;margin-top:48px}
+.card{position:relative;border-radius:var(--radius);padding:24px;background:linear-gradient(180deg,#15141c,#0f0e14);border:1px solid var(--line);overflow:hidden;transition:transform .2s,border-color .2s}
+.card::before{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;background:linear-gradient(135deg,var(--violet),var(--magenta),var(--accent),var(--cyan));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .25s}
+.card:hover{transform:translateY(-3px)}
+.card:hover::before{opacity:1}
+.card .top{display:flex;align-items:center;gap:16px}
+.icon{width:64px;height:64px;border-radius:15px;flex:none;box-shadow:0 8px 24px rgba(0,0,0,.45)}
+.icon.placeholder{display:grid;place-items:center;background:radial-gradient(circle at 30% 20%,#2a2440,#121018);border:1px solid #2c2838;font-weight:800;font-size:22px}
+.card h3{font-size:20px;letter-spacing:-.02em}
+.kind{color:var(--muted);font-size:13px;font-weight:500}
+.card p{color:#bdb9c7;margin-top:16px;font-size:15px}
+.status{display:inline-block;margin-top:6px;font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:999px;border:1px solid}
+.s-live{color:#7dffb0;border-color:#2f5a42;background:#0f2118}
+.s-review{color:#ffd37a;border-color:#5a4a2a;background:#211a0d}
+.s-soon{color:#9ad8ff;border-color:#2a4a5a;background:#0d1a21}
+.s-dev{color:#c2b5ff;border-color:#3d3462;background:#16122a}
+.links{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.links a{font-size:13px;font-weight:600;color:var(--paper);padding:7px 12px;border-radius:10px;background:#1d1b25;border:1px solid #2c2936}
+.links a:hover{background:#26232f}
+
+/* about */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.pillars{display:grid;gap:14px}
+.pillar{display:flex;gap:16px;padding:20px;border-radius:var(--radius);background:var(--ink-2);border:1px solid var(--line)}
+.pillar i{width:12px;height:12px;border-radius:3px;margin-top:7px;flex:none}
+.pillar b{display:block;font-size:17px}
+.pillar span{color:var(--muted);font-size:15px}
+
+/* contact */
+.contact{text-align:center;border-radius:28px;padding:72px 24px;position:relative;overflow:hidden;background:var(--ink-2);border:1px solid var(--line)}
+.contact::before{content:"";position:absolute;inset:0;background:radial-gradient(50% 80% at 50% 120%,rgba(124,92,255,.35),transparent 70%),radial-gradient(30% 50% at 85% 0%,rgba(255,91,46,.18),transparent 70%)}
+.contact>*{position:relative}
+.contact .cta{justify-content:center}
+footer{padding:40px 0 60px;color:var(--dim);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+@media (max-width:860px){
+  .hero .wrap,.about{grid-template-columns:1fr}
+  .badge{width:min(300px,72vw);order:-1;margin-bottom:8px}
+  nav ul{display:none}
+  section{padding:80px 0}
+  .grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a class="brand" href="#top"><img src="assets/logo-badge-512.png" alt="">l1tedev<span class="pixel"></span></a>
+  <ul><li><a href="#work">Work</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul>
+</div></nav>
+
+<header class="hero" id="top">
+  <canvas id="pixels" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div>
+      <h1 class="wordmark">l1tedev<span class="pixel"></span></h1>
+      <div class="studios">STUDIOS</div>
+      <p class="tag">An independent studio making games with a twist: puzzles, tycoons and strategy.</p>
+      <div class="cta">
+        <a class="btn primary" href="#work">See the work</a>
+        <a class="btn ghost" href="#contact">Get in touch</a>
+      </div>
+    </div>
+    <div class="badge" aria-hidden="true">
+      <svg viewBox="0 0 400 400">
+        <defs>
+          <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#7c5cff"/><stop offset=".35" stop-color="#ff3d8a"/>
+            <stop offset=".65" stop-color="#ff5b2e"/><stop offset="1" stop-color="#36d6ff"/>
+          </linearGradient>
+          <path id="textCircle" d="M200,200 m-148,0 a148,148 0 1,1 296,0 a148,148 0 1,1 -296,0"/>
+        </defs>
+        <circle cx="200" cy="200" r="178" fill="#0d0c12"/>
+        <circle cx="200" cy="200" r="178" fill="none" stroke="url(#ringGrad)" stroke-width="5"/>
+        <g class="spin">
+          <text fill="#f4f1ea" font-size="17" font-weight="700" letter-spacing="5.2" font-family="-apple-system,Inter,sans-serif">
+            <textPath href="#textCircle">L1TEDEV • STUDIOS • INDEPENDENT GAMES • EST. 2026 •</textPath>
+          </text>
+        </g>
+        <circle cx="200" cy="200" r="126" fill="none" stroke="#5e5a6e" stroke-width="1.2"/>
+        <g id="ticks"></g>
+        <circle cx="200" cy="200" r="118" fill="#09090d"/>
+        <text x="200" y="232" text-anchor="middle" fill="#f4f1ea" font-size="104" font-weight="800" letter-spacing="-3" font-family="-apple-system,Inter,sans-serif">l1</text>
+        <rect x="256" y="212" width="18" height="18" rx="4" fill="#ff5b2e"/>
+        <rect x="193" y="15" width="14" height="14" rx="3" fill="#ff5b2e"/>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="work"><div class="wrap">
+    <div class="eyebrow">Work</div>
+    <h2>Games and apps</h2>
+    <p class="lead">Small, polished games built around one strong idea, from mirror puzzles to idle empires.</p>
+    <div class="grid" id="grid"></div>
+    <noscript><p class="lead">Turn on JavaScript to see the projects.</p></noscript>
+  </div></section>
+
+  <section id="about"><div class="wrap about">
+    <div>
+      <div class="eyebrow">About</div>
+      <h2>A one-person studio with a long to-do list</h2>
+      <p class="lead">l1tedev studios designs, builds and ships its own games, from the first sketch to the App Store. Every game starts from a twist that makes a familiar genre feel new.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar"><i style="background:var(--violet)"></i><div><b>Puzzles</b><span>Quick to learn, hard to master.</span></div></div>
+      <div class="pillar"><i style="background:var(--accent)"></i><div><b>Tycoons</b><span>Build something huge from almost nothing.</span></div></div>
+      <div class="pillar"><i style="background:var(--cyan)"></i><div><b>Strategy</b><span>Plans, trade-offs and big decisions.</span></div></div>
+    </div>
+  </div></section>
+
+  <section id="contact"><div class="wrap">
+    <div class="contact">
+      <div class="eyebrow">Contact</div>
+      <h2>Say hello</h2>
+      <p class="lead" style="margin:14px auto 0">Feedback, press or partnership ideas are all welcome.</p>
+      <div class="cta">
+        <a class="btn primary" href="mailto:cadpack.support@gmail.com">cadpack.support@gmail.com</a>
+        <a class="btn ghost" href="https://x.com/l1tedevstudios" target="_blank" rel="noopener">@l1tedevstudios on X</a>
+      </div>
+    </div>
+  </div></section>
+</main>
+
+<footer><div class="wrap">
+  <span>© 2026 l1tedev studios</span>
+  <span><a href="app-ads.txt">app-ads.txt</a></span>
+</div></footer>
+
+<script src="projects.js"></script>
+<script>
+// Project cards
+const statusClass = { "Live": "s-live", "In review": "s-review", "Coming soon": "s-soon", "In development": "s-dev" };
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+document.getElementById("grid").innerHTML = (window.PROJECTS || []).map(p => `
+  <article class="card">
+    <div class="top">
+      ${p.icon ? `<img class="icon" src="${esc(p.icon)}" alt="" loading="lazy">` : `<div class="icon placeholder">?</div>`}
+      <div><h3>${esc(p.name)}</h3><div class="kind">${esc(p.kind)}</div><span class="status ${statusClass[p.status] || "s-dev"}">${esc(p.status)}</span></div>
+    </div>
+    <p>${esc(p.blurb)}</p>
+    ${p.links && p.links.length ? `<div class="links">${p.links.map(l => `<a href="${esc(l.url)}">${esc(l.label)}</a>`).join("")}</div>` : ""}
+  </article>`).join("");
+
+// Badge tick marks
+const ticks = document.getElementById("ticks");
+let t = "";
+for (let i = 0; i < 120; i++) {
+  const a = (i * 3 - 90) * Math.PI / 180, long = i % 10 === 0, r1 = 130, r2 = r1 + (long ? 9 : 4);
+  t += `<line x1="${200 + r1 * Math.cos(a)}" y1="${200 + r1 * Math.sin(a)}" x2="${200 + r2 * Math.cos(a)}" y2="${200 + r2 * Math.sin(a)}" stroke="${long ? "#aaa6b6" : "#4a4758"}" stroke-width="${long ? 1.6 : 1}"/>`;
+}
+ticks.innerHTML = t;
+
+// Pixel field that thins out toward the wordmark
+const cv = document.getElementById("pixels"), cx = cv.getContext("2d");
+const colors = ["#7c5cff", "#ff3d8a", "#ff5b2e", "#36d6ff", "#f4f1ea"];
+function draw() {
+  const dpr = Math.min(window.devicePixelRatio || 1, 2), w = cv.clientWidth, h = cv.clientHeight;
+  cv.width = w * dpr; cv.height = h * dpr; cx.setTransform(dpr, 0, 0, dpr, 0, 0); cx.clearRect(0, 0, w, h);
+  let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+  const cell = 18, s = 11, x0 = w * 0.45;
+  for (let y = 0; y < h; y += cell) for (let x = x0; x < w; x += cell) {
+    const tt = (x - x0) / (w - x0);
+    if (rnd() < tt * tt * 0.42) {
+      const yy = y / h, c = rnd() < 0.12 ? "#ff5b2e" : yy < 0.3 ? "#7c5cff" : yy < 0.55 ? "#ff3d8a" : yy < 0.72 ? colors[rnd() < 0.5 ? 2 : 4] : "#36d6ff";
+      cx.globalAlpha = 0.25 + tt * 0.6; cx.fillStyle = c;
+      cx.beginPath(); cx.roundRect(x + (cell - s) / 2, y + (cell - s) / 2, s, s, 2.5); cx.fill();
+    }
+  }
+}
+draw(); addEventListener("resize", draw);
+</script>
+</body>
+</html>
