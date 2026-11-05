@@ -19,8 +19,9 @@ window.PROJECTS = [
     kind: "City builder · iOS",
     blurb: "Grow a town from the Stone Age to the Future: build, research and modernize one city across every age.",
     icon: "assets/icons/mayorofages.png",
-    status: "Coming soon",
+    status: "Live",
     links: [
+      { label: "App Store", url: "https://apps.apple.com/app/id6828563011" },
       { label: "Support", url: "mayorofages-site/" },
       { label: "Privacy", url: "mayorofages-site/privacy.html" },
       { label: "Ad choices", url: "mayorofages-site/choices.html" },
