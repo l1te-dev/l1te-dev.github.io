@@ -76,7 +76,7 @@ h2{font-size:clamp(34px,4.6vw,54px);letter-spacing:-.035em;line-height:1.05;marg
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px;margin-top:48px}
 .card{position:relative;border-radius:var(--radius);padding:24px;background:linear-gradient(180deg,#15141c,#0f0e14);border:1px solid var(--line);overflow:hidden;transition:transform .2s,border-color .2s}
 .card::before{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;background:linear-gradient(135deg,var(--violet),var(--magenta),var(--accent),var(--cyan));
-  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .25s}
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .25s;pointer-events:none}
 .card:hover{transform:translateY(-3px)}
 .card:hover::before{opacity:1}
 .card .top{display:flex;align-items:center;gap:16px}
@@ -217,7 +217,7 @@ document.getElementById("grid").innerHTML = (window.PROJECTS || []).map(p => `
       <div><h3>${esc(p.name)}</h3><div class="kind">${esc(p.kind)}</div><span class="status ${statusClass[p.status] || "s-dev"}">${esc(p.status)}</span></div>
     </div>
     <p>${esc(p.blurb)}</p>
-    ${p.links && p.links.length ? `<div class="links">${p.links.map(l => `<a href="${esc(l.url)}">${esc(l.label)}</a>`).join("")}</div>` : ""}
+    ${p.links && p.links.length ? `<div class="links">${p.links.map(l => `<a href="${esc(l.url)}"${/^https?:/.test(l.url) ? ' target="_blank" rel="noopener"' : ""}>${esc(l.label)}</a>`).join("")}</div>` : ""}
   </article>`).join("");
 
 // Badge tick marks
