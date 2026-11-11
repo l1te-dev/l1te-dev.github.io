@@ -44,8 +44,13 @@ window.PROJECTS = [
     kind: "Utility · iOS",
     blurb: "Compare ride prices and see where surge builds around concerts and games, with live events and weather.",
     icon: "assets/icons/surgeradar.png",
-    status: "In review",
-    links: [],
+    status: "Live",
+    links: [
+      { label: "App Store", url: "https://apps.apple.com/app/id6827780907" },
+      { label: "Support", url: "surgeradar/support/" },
+      { label: "Privacy", url: "surgeradar/privacy/" },
+      { label: "Terms", url: "surgeradar/terms/" },
+    ],
   },
   {
     name: "Untitled strategy game",
