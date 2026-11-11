@@ -1,4 +1,5 @@
 // Your portfolio. To add work, copy one block, fill it in, and push.
+//   After editing, bump the ?v= date on the projects.js script tag in index.html so browsers reload it.
 //   icon:   a square image in assets/icons/ (256x256 PNG works well)
 //   status: "Live", "In review", "Coming soon" or "In development"
 //   links:  any number of { label, url } (App Store, support, privacy, a video...)
